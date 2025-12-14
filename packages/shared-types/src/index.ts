@@ -53,10 +53,10 @@ export interface PaginationMeta {
     totalPages: number;
 }
 
-// export interface PaginatedResponse<T> {
-//     items: T[];
-//     pagination: PaginationMeta;
-// }
+export interface PaginatedResponse<T> {
+    items: T[];
+    pagination: PaginationMeta;
+}
 
 export interface AuthResponse {
     token: string;

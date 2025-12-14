@@ -61,3 +61,32 @@ export type PurchaseInput = z.infer<typeof purchaseSchema>;
 export type RestockInput = z.infer<typeof restockSchema>;
 export type SweetListQuery = z.infer<typeof sweetListQuerySchema>;
 export type SearchQuery = z.infer<typeof searchQuerySchema>;
+
+
+
+export const registerFormSchema = registerSchema.extend({
+    confirmPassword: z.string().min(1, 'Please confirm your password'),
+}).refine((data) => data.password === data.confirmPassword, {
+    message: 'Passwords do not match',
+    path: ['confirmPassword'],
+});
+
+export const createSweetFormSchema = z.object({
+    name: z.string().min(2, 'Name must be at least 2 characters').max(200, 'Name must be less than 200 characters'),
+    category: z.string().min(2, 'Category must be at least 2 characters').max(100, 'Category must be less than 100 characters'),
+    description: z.string().optional(),
+    price: z.coerce.number().positive('Price must be positive').multipleOf(0.01, 'Price can have at most 2 decimal places'),
+    quantity: z.coerce.number().int('Quantity must be an integer').nonnegative('Quantity cannot be negative'),
+    imageUrl: z.string().url('Invalid URL format').optional().or(z.literal('')),
+});
+
+export const updateSweetFormSchema = createSweetFormSchema.partial();
+
+export const restockFormSchema = z.object({
+    quantity: z.coerce.number().int('Quantity must be an integer').positive('Quantity must be positive'),
+});
+
+export type RegisterFormInput = z.infer<typeof registerFormSchema>;
+export type CreateSweetFormInput = z.infer<typeof createSweetFormSchema>;
+export type UpdateSweetFormInput = z.infer<typeof updateSweetFormSchema>;
+export type RestockFormInput = z.infer<typeof restockFormSchema>;

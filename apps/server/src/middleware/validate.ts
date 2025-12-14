@@ -18,11 +18,11 @@ export const validateBody = (schema: ZodSchema) => {
 
 // This does two things at once:
 
-// ✅ 1. Validates
+//  Validates
 
 // Ensures only correct data passes through
 
-// ✅ 2. Sanitizes & normalizes
+//  Sanitizes & normalizes
 
 // Removes unexpected fields
 
