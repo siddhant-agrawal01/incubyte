@@ -4,7 +4,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
-
+import authRoutes from './routes/authRoutes';
+import sweetRoutes from './routes/sweetRoute';
 dotenv.config();
 
 const app: Application = express();
@@ -43,8 +44,8 @@ const apiLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-app.use("api/auth", authLimiter);
-app.use("api/sweets", apiLimiter);
+app.use("api/auth", authLimiter,authRoutes);
+app.use("api/sweets", apiLimiter,sweetRoutes);
 
 const startServer = async () => {
   try {
