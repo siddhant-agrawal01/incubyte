@@ -1,4 +1,4 @@
-#  Sweet Shop Management System
+#  Sweet Shop Management System Built using MonoRepo
 
 
 ## 🔗 Live Demo (https://incubyte-web.vercel.app/)
