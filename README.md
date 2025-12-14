@@ -1,0 +1,339 @@
+# 🍬 Sweet Shop Management System
+
+> A full-stack web application for managing a sweet shop with user authentication, product catalog, and admin capabilities.
+
+## 🔗 Live Demo
+
+**[🌐 Deployed Application](https://your-deployed-link-here.com)** ← *Add your deployed link here*
+
+---
+
+## 📹 Video Demo
+
+**[🎥 Watch Demo Video](https://your-video-link-here.com)** ← *Add your demo video link here*
+
+---
+
+## 📸 Screenshots
+
+### Landing Page
+![Landing Page](screenshots/landing-page.png)
+*Add screenshot: Login/Landing page*
+
+### User Dashboard
+![User Dashboard](screenshots/user-dashboard.png)
+*Add screenshot: Main dashboard with sweet cards and ₹ prices*
+
+### Admin Panel
+![Admin Panel](screenshots/admin-panel.png)
+*Add screenshot: Admin management interface*
+
+### Sweet Details
+![Sweet Details](screenshots/sweet-details.png)
+*Add screenshot: Individual sweet card/purchase flow*
+
+---
+
+## 📖 Project Overview
+
+### What is Sweet Shop?
+
+Sweet Shop is a modern, full-stack e-commerce application designed for managing a sweet store. It features:
+
+- **🔐 User Authentication**: Secure registration and login with JWT tokens
+- **🛒 Product Catalog**: Browse sweets with search, filter by category, and pagination
+- **💳 Purchase System**: Buy sweets with real-time stock updates
+- **👨‍💼 Admin Dashboard**: Full CRUD operations for managing products
+- **💰 Indian Rupee (₹) Pricing**: All prices displayed in INR
+- **✨ Modern UI**: Glassmorphism design with smooth animations
+
+### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| User Registration | Create account with email validation |
+| Secure Login | JWT-based authentication |
+| Browse Sweets | View products with images, prices, stock |
+| Search & Filter | Find sweets by name or category |
+| Purchase | Buy sweets with stock tracking |
+| Admin Panel | Add, edit, delete, restock products |
+| Responsive Design | Works on desktop and mobile |
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js 16** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first styling
+- **React Hook Form** - Form management with Zod validation
+- **Lucide React** - Beautiful icons
+- **Sonner** - Toast notifications
+
+### Backend
+- **Node.js + Express** - REST API server
+- **TypeScript** - Type-safe code
+- **Prisma ORM** - Database management
+- **PostgreSQL** - Relational database
+- **JWT** - Authentication tokens
+- **bcrypt** - Password hashing
+
+### Shared Packages
+- **validation** - Zod schemas for form validation
+- **shared-types** - TypeScript interfaces
+
+### DevOps
+- **Turborepo** - Monorepo management
+- **Jest** - Testing framework
+- **Supertest** - API testing
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- **Node.js** v18 or higher
+- **npm** v9 or higher
+- **PostgreSQL** database (or use NeonDB for cloud)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/sweet-shop.git
+cd sweet-shop
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+This will install all dependencies for both frontend and backend (monorepo).
+
+### 3. Set Up Environment Variables
+
+#### Backend (`apps/server/.env`)
+
+Create a `.env` file in `apps/server/`:
+
+```env
+# Database
+DATABASE_URL="postgresql://username:password@host:5432/database_name"
+
+# JWT Secret (use a strong random string)
+JWT_SECRET="your-super-secret-jwt-key-here"
+
+# Server Port
+PORT=3001
+```
+
+#### Frontend (`apps/web/.env`)
+
+Create a `.env` file in `apps/web/`:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
+```
+
+### 4. Set Up Database
+
+```bash
+# Navigate to server directory
+cd apps/server
+
+# Generate Prisma client
+npx prisma generate
+
+# Push schema to database
+npx prisma db push
+
+# Seed the database with sample sweets
+npx tsx prisma/seed.ts
+```
+
+### 5. Run the Application
+
+#### Option A: Run Both (Recommended)
+
+From the root directory:
+
+```bash
+npm run dev
+```
+
+This starts both frontend (port 3000) and backend (port 3001).
+
+#### Option B: Run Separately
+
+**Backend:**
+```bash
+cd apps/server
+npm run dev
+```
+
+**Frontend:**
+```bash
+cd apps/web
+npm run dev
+```
+
+### 6. Access the Application
+
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:3001
+- **Prisma Studio** (DB GUI): `cd apps/server && npx prisma studio`
+
+---
+
+## 📁 Project Structure
+
+```
+sweet-shop/
+├── apps/
+│   ├── server/                 # Backend Express API
+│   │   ├── prisma/
+│   │   │   ├── schema.prisma   # Database schema
+│   │   │   └── seed.ts         # Sample data seeder
+│   │   ├── src/
+│   │   │   ├── controllers/    # Route handlers
+│   │   │   ├── middleware/     # Auth, validation
+│   │   │   ├── routes/         # API routes
+│   │   │   ├── utils/          # Helpers, Prisma, JWT
+│   │   │   └── __tests__/      # Jest tests
+│   │   └── package.json
+│   │
+│   └── web/                    # Frontend Next.js App
+│       ├── app/
+│       │   ├── login/          # Login page
+│       │   ├── register/       # Registration page
+│       │   ├── dashboard/      # User dashboard
+│       │   └── admin/          # Admin panel
+│       ├── components/         # React components
+│       ├── lib/                # API client, auth
+│       └── package.json
+│
+├── packages/
+│   ├── validation/             # Zod schemas
+│   ├── shared-types/           # TypeScript types
+│   └── ui/                     # Shared UI components
+│
+├── turbo.json                  # Turborepo config
+└── package.json                # Root package.json
+```
+
+---
+
+## 🔌 API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| POST | `/api/auth/register` | Register new user | No |
+| POST | `/api/auth/login` | Login user | No |
+
+### Sweets
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| GET | `/api/sweets` | Get all sweets | Yes |
+| GET | `/api/sweets/search` | Search sweets | Yes |
+| POST | `/api/sweets` | Create sweet | Admin |
+| PUT | `/api/sweets/:id` | Update sweet | Admin |
+| DELETE | `/api/sweets/:id` | Delete sweet | Admin |
+| POST | `/api/sweets/:id/purchase` | Purchase sweet | Yes |
+| POST | `/api/sweets/:id/restock` | Restock sweet | Admin |
+
+---
+
+## 🧪 Running Tests
+
+```bash
+# Run all tests
+cd apps/server
+npm test
+
+# Run with coverage
+npm run test:coverage
+
+# Watch mode
+npm run test:watch
+```
+
+### Test Results
+
+```
+Test Suites: 2 passed, 2 total
+Tests:       17 passed, 17 total
+Time:        0.98s
+```
+
+---
+
+## 👤 User Roles
+
+### Regular User
+- Register/Login
+- Browse sweets
+- Search and filter
+- Purchase sweets
+
+### Admin User
+- All regular user features
+- Add new sweets
+- Edit sweet details
+- Delete sweets
+- Restock inventory
+
+---
+
+## 🎨 UI Features
+
+- **Glassmorphism Navbar**: Floating frosted glass design
+- **Shimmer Buttons**: Animated admin button with shine effect
+- **Gradient Text**: Modern gradient typography
+- **Responsive Cards**: Beautiful sweet product cards
+- **Toast Notifications**: User feedback for actions
+- **Loading States**: Smooth loading indicators
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Siddhant Agrawal**
+
+- GitHub: [@siddhant-agrawal01](https://github.com/siddhant-agrawal01)
+
+---
+
+## 🙏 Acknowledgments
+
+- [Incubyte](https://incubyte.co/) - For the project challenge
+- [Next.js](https://nextjs.org/) - React framework
+- [Prisma](https://prisma.io/) - Database ORM
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+
+---
+
+*Made with ❤️ using TypeScript, Next.js, and Express*
