@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 type LoginFormData = LoginInput;
 
@@ -42,10 +43,10 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-            <Card className="w-full max-w-md">
+        <div className="min-h-screen flex items-center justify-center bg-background p-4">
+            <Card className="w-full max-w-md glass-card">
                 <CardHeader className="text-center">
-                    <CardTitle className="text-2xl font-bold">Sweet Shop</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-foreground">Sweet Shop</CardTitle>
                     <CardDescription>Sign in to your account</CardDescription>
                 </CardHeader>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -79,11 +80,16 @@ export default function LoginPage() {
                     </CardContent>
                     <CardFooter className="flex flex-col space-y-4">
                         <Button type="submit" className="w-full" disabled={isLoading}>
-                            {isLoading ? 'Signing in...' : 'Sign In'}
+                            {isLoading ? (
+                                <>
+                                    <LoadingSpinner size="sm" className="mr-2" />
+                                    Signing in...
+                                </>
+                            ) : 'Sign In'}
                         </Button>
-                        <p className="text-sm text-center text-gray-600">
+                        <p className="text-sm text-center text-muted-foreground">
                             Don't have an account?{' '}
-                            <Link href="/register" className="text-black font-medium hover:underline">
+                            <Link href="/register" className="text-rose-500 font-medium hover:text-rose-600 transition-colors">
                                 Register
                             </Link>
                         </p>

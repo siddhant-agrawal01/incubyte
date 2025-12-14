@@ -82,6 +82,18 @@ Sweet Shop is a modern, full-stack e-commerce application designed for managing 
 
 ---
 
+## AI Usage
+
+AI tools were used as a development aid in the following areas of this project:
+
+- **Frontend UI Development**: Assisted in designing and refining UI components, layouts, and styling to improve usability and consistency.
+- **Testing**: Helped in generating and refining test cases to ensure better coverage and reliability.
+- **Search Functionality**: Assisted in designing and optimizing the search logic to improve accuracy and performance.
+
+All core logic, architectural decisions, and final implementations were reviewed and validated manually to ensure correctness and maintainability.
+
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites

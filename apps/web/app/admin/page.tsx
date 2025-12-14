@@ -9,6 +9,7 @@ import type { Sweet } from 'shared-types';
 import { apiClient } from '../lib/api';
 import { AdminHeader, SweetForm, RestockForm, SweetsTable } from '@/components/admin';
 import { useAuthRedirect } from '../hooks';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 type SweetFormData = CreateSweetFormInput;
 type RestockFormData = RestockFormInput;
@@ -147,14 +148,14 @@ export default function AdminPage() {
 
     if (authLoading || !user || !isAdmin) {
         return (
-            <div className="min-h-screen flex items-center justify-center">
-                <p>Loading...</p>
+            <div className="min-h-screen flex items-center justify-center bg-background">
+                <LoadingSpinner size="lg" label="Loading..." />
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50">
+        <div className="min-h-screen bg-background">
             <AdminHeader
                 onBack={() => router.push('/dashboard')}
                 onAddSweet={handleAddSweet}

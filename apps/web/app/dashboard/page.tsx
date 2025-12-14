@@ -17,6 +17,7 @@ import { Search, LogOut, Plus, Package, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
 import type { Sweet, PaginationMeta } from "shared-types";
 import { useAuthRedirect, useDebouncedValue } from "../hooks";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -107,23 +108,23 @@ export default function DashboardPage() {
 
   if (authLoading || !user) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p>Loading...</p>
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <LoadingSpinner size="lg" label="Loading..." />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50">
+    <div className="min-h-screen bg-background">
       <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
-        <nav className="backdrop-blur-xl bg-white/70 border border-white/20 rounded-2xl shadow-2xl shadow-black/5 px-6 py-4">
+        <nav className="glass-nav rounded-2xl px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-bold text-foreground">
                 Sweet Shop
               </h1>
               {isAdmin && (
-                <span className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-full shadow-lg">
+                <span className="px-3 py-1 text-xs font-medium bg-rose-500 text-white rounded-full shadow-sm">
                   Admin
                 </span>
               )}
@@ -137,10 +138,10 @@ export default function DashboardPage() {
                   variant="outline"
                   size="sm"
                   onClick={() => router.push("/admin")}
-                  className="relative overflow-hidden bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white border-gray-800 hover:border-gray-700 shadow-md hover:shadow-lg transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:animate-shimmer"
+                  className="bg-rose-500 text-white border-rose-500 hover:bg-rose-600 hover:border-rose-600 shadow-sm transition-all duration-200"
                 >
-                  <Plus className="w-4 h-4 mr-2 relative z-10" />
-                  <span className="relative z-10">Manage Sweets</span>
+                  <Plus className="w-4 h-4 mr-2" />
+                  Manage Sweets
                 </Button>
               )}
               <Button
@@ -185,7 +186,7 @@ export default function DashboardPage() {
 
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <p className="text-gray-500">Loading sweets...</p>
+            <LoadingSpinner size="md" label="Loading sweets..." />
           </div>
         ) : sweets.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12">
