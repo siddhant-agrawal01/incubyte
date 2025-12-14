@@ -42,7 +42,7 @@ export function SweetForm({
                             {errors.category && <p className="text-sm text-red-500">{errors.category.message}</p>}
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="price">Price ($)</Label>
+                            <Label htmlFor="price">Price (₹)</Label>
                             <Input id="price" type="number" step="0.01" {...register('price')} />
                             {errors.price && <p className="text-sm text-red-500">{errors.price.message}</p>}
                         </div>

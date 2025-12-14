@@ -10,7 +10,7 @@ async function main() {
       name: "Chocolate Truffle",
       category: "Chocolate",
       description: "Rich dark chocolate truffle with cocoa powder coating",
-      price: 2.99,
+      price: 248.17,
       quantity: 100,
       imageUrl:
         "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=400",
@@ -19,7 +19,7 @@ async function main() {
       name: "Strawberry Gummy",
       category: "Gummy",
       description: "Soft and chewy strawberry-flavored gummy candy",
-      price: 1.49,
+      price: 123.67,
       quantity: 200,
       imageUrl:
         "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400",
@@ -28,7 +28,7 @@ async function main() {
       name: "Vanilla Fudge",
       category: "Fudge",
       description: "Creamy vanilla fudge with a smooth texture",
-      price: 3.49,
+      price: 289.67,
       quantity: 75,
       imageUrl:
         "https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?w=400",
@@ -37,7 +37,7 @@ async function main() {
       name: "Mint Chocolate",
       category: "Chocolate",
       description: "Refreshing mint chocolate with a cool finish",
-      price: 2.79,
+      price: 231.57,
       quantity: 120,
       imageUrl:
         "https://images.unsplash.com/photo-1511381939415-e44015466834?w=400",
@@ -46,7 +46,7 @@ async function main() {
       name: "Caramel Chew",
       category: "Caramel",
       description: "Soft caramel chew with a buttery flavor",
-      price: 1.99,
+      price: 165.17,
       quantity: 150,
       imageUrl:
         "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400",
@@ -55,7 +55,7 @@ async function main() {
       name: "Lemon Drop",
       category: "Hard Candy",
       description: "Tangy lemon-flavored hard candy",
-      price: 0.99,
+      price: 82.17,
       quantity: 300,
       imageUrl:
         "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400",
@@ -64,7 +64,7 @@ async function main() {
       name: "Peanut Butter Cup",
       category: "Chocolate",
       description: "Chocolate cup filled with creamy peanut butter",
-      price: 3.99,
+      price: 331.17,
       quantity: 80,
       imageUrl:
         "https://images.unsplash.com/photo-1571506165871-ee72a35bc9d4?w=400",
@@ -73,7 +73,7 @@ async function main() {
       name: "Raspberry Licorice",
       category: "Licorice",
       description: "Sweet raspberry-flavored licorice twists",
-      price: 2.29,
+      price: 190.07,
       quantity: 90,
       imageUrl:
         "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400",
@@ -82,7 +82,7 @@ async function main() {
       name: "Butterscotch Disc",
       category: "Hard Candy",
       description: "Classic butterscotch hard candy disc",
-      price: 1.29,
+      price: 107.07,
       quantity: 250,
       imageUrl:
         "https://images.unsplash.com/photo-1514517521153-1be72277b32f?w=400",
@@ -91,14 +91,14 @@ async function main() {
       name: "Coconut Cluster",
       category: "Chocolate",
       description: "Chocolate cluster with toasted coconut flakes",
-      price: 3.29,
+      price: 273.07,
       quantity: 60,
       imageUrl:
         "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=400",
     },
   ];
 
-  // Clear existing sweets and create new ones
+  await prisma.purchase.deleteMany({});
   await prisma.sweet.deleteMany({});
   await prisma.sweet.createMany({
     data: sweets,

@@ -43,17 +43,17 @@ export default function DashboardPage() {
         setLoading(true);
         const response = debouncedSearch.trim()
           ? await apiClient.searchSweets({
-              q: debouncedSearch,
-              category: selectedCategory || undefined,
-              page,
-            })
+            q: debouncedSearch,
+            category: selectedCategory || undefined,
+            page,
+          })
           : await apiClient.getSweets({
-              page,
-              limit: 12,
-              category: selectedCategory || undefined,
-              sortBy: "name",
-              sortOrder: "asc",
-            });
+            page,
+            limit: 12,
+            category: selectedCategory || undefined,
+            sortBy: "name",
+            sortOrder: "asc",
+          });
 
         if (response.data) {
           const data =
@@ -114,20 +114,22 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50">
+      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+        <nav className="backdrop-blur-xl bg-white/70 border border-white/20 rounded-2xl shadow-2xl shadow-black/5 px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-gray-900">Sweet Shop</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                Sweet Shop
+              </h1>
               {isAdmin && (
-                <span className="px-2 py-1 text-xs font-medium bg-gray-900 text-white rounded">
+                <span className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-full shadow-lg">
                   Admin
                 </span>
               )}
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-gray-700 font-medium">
                 Welcome, {user.name}
               </span>
               {isAdmin && (
@@ -135,21 +137,27 @@ export default function DashboardPage() {
                   variant="outline"
                   size="sm"
                   onClick={() => router.push("/admin")}
+                  className="relative overflow-hidden bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white border-gray-800 hover:border-gray-700 shadow-md hover:shadow-lg transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:animate-shimmer"
                 >
-                  <Plus className="w-4 h-4 mr-2" />
-                  Manage Sweets
+                  <Plus className="w-4 h-4 mr-2 relative z-10" />
+                  <span className="relative z-10">Manage Sweets</span>
                 </Button>
               )}
-              <Button variant="ghost" size="sm" onClick={handleLogout}>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleLogout}
+                className="hover:bg-gray-900/10 transition-colors"
+              >
                 <LogOut className="w-4 h-4 mr-2" />
                 Logout
               </Button>
             </div>
           </div>
-        </div>
-      </header>
+        </nav>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 pt-24 pb-6">
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -215,7 +223,7 @@ export default function DashboardPage() {
                     </p>
                     <div className="flex items-center justify-between mt-3">
                       <span className="text-xl font-bold">
-                        ${sweet.price.toFixed(2)}
+                        ₹{sweet.price.toFixed(2)}
                       </span>
                       <span
                         className={`text-sm ${sweet.quantity > 0 ? "text-green-600" : "text-red-500"}`}

@@ -59,7 +59,7 @@ export function SweetsTable({
                                         </div>
                                     </td>
                                     <td className="py-3 px-2">{sweet.category}</td>
-                                    <td className="py-3 px-2 text-right">${sweet.price.toFixed(2)}</td>
+                                    <td className="py-3 px-2 text-right">₹{sweet.price.toFixed(2)}</td>
                                     <td className={`py-3 px-2 text-right ${sweet.quantity === 0 ? 'text-red-500' : ''}`}>
                                         {sweet.quantity}
                                     </td>
