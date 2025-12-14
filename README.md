@@ -1,26 +1,24 @@
-# 🍬 Sweet Shop Management System
+#  Sweet Shop Management System
 
-> A full-stack web application for managing a sweet shop with user authentication, product catalog, and admin capabilities.
 
 ## 🔗 Live Demo
 
-**[🌐 Deployed Application](  )** ← *Add your deployed link here*
-
----
-
-## 📹 Video Demo
+**[🌐 Deployed Application](https://incubyte-web.vercel.app/  )** 
 
 
-
----
 
 ## 📸 Screenshots
+### Landing page
+<img width="3072" height="1648" alt="Screenshot From 2025-12-15 00-00-33" src="https://github.com/user-attachments/assets/74e5ac9d-a06a-4ae6-aaaf-10e0d37ff9ad" />
+
+
 ### Dashboard
-<img width="3072" height="1648" alt="Screenshot From 2025-12-14 22-02-38" src="https://github.com/user-attachments/assets/1616663a-534b-49bf-99f0-ba1d37716e1c" />
-### Login
-<img width="3072" height="1648" alt="Screenshot From 2025-12-14 22-02-28" src="https://github.com/user-attachments/assets/5e801982-3785-4664-85c3-b43a1a5a9c44" />
+<img width="3072" height="1648" alt="Screenshot From 2025-12-15 00-00-51" src="https://github.com/user-attachments/assets/287988c6-bba7-459a-b5b9-1b2a50aa4e18" />
+
+
+
 ### admin management
-<img width="3072" height="1648" alt="Screenshot From 2025-12-14 22-02-43" src="https://github.com/user-attachments/assets/7ff0ce2f-edd1-4ab6-acfa-827b829ae995" />
+<img width="3072" height="1648" alt="Screenshot From 2025-12-15 00-01-02" src="https://github.com/user-attachments/assets/41fe20ed-33c5-4986-a3ed-ae0a42bf2e2a" />
 
 
 
