@@ -2,6 +2,7 @@ import type { Sweet } from 'shared-types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Edit, Trash2, Package, RefreshCw } from 'lucide-react';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 interface SweetsTableProps {
     sweets: Sweet[];
@@ -23,7 +24,7 @@ export function SweetsTable({
     if (loading) {
         return (
             <div className="flex items-center justify-center py-12">
-                <p className="text-gray-500">Loading sweets...</p>
+                <LoadingSpinner size="md" label="Loading sweets..." />
             </div>
         );
     }

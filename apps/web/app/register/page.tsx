@@ -19,6 +19,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useToast } from "@/app/hooks/use-toast";
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 type RegisterFormData = RegisterFormInput;
 
@@ -57,10 +58,10 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-md glass-card">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
+          <CardTitle className="text-2xl font-bold text-foreground">Create Account</CardTitle>
           <CardDescription>Join Sweet Shop today</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -124,13 +125,18 @@ export default function RegisterPage() {
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Creating account..." : "Create Account"}
+              {isLoading ? (
+                <>
+                  <LoadingSpinner size="sm" className="mr-2" />
+                  Creating account...
+                </>
+              ) : "Create Account"}
             </Button>
-            <p className="text-sm text-center text-gray-600">
+            <p className="text-sm text-center text-muted-foreground">
               Already have an account?{" "}
               <Link
                 href="/login"
-                className="text-black font-medium hover:underline"
+                className="text-rose-500 font-medium hover:text-rose-600 transition-colors"
               >
                 Sign in
               </Link>
