@@ -4,33 +4,30 @@
 
 ## 🔗 Live Demo
 
-**[🌐 Deployed Application](https://your-deployed-link-here.com)** ← *Add your deployed link here*
+**[🌐 Deployed Application](  )** ← *Add your deployed link here*
 
 ---
 
 ## 📹 Video Demo
 
-**[🎥 Watch Demo Video](https://your-video-link-here.com)** ← *Add your demo video link here*
+
 
 ---
 
 ## 📸 Screenshots
+### Dashboard
+<img width="3072" height="1648" alt="Screenshot From 2025-12-14 22-02-38" src="https://github.com/user-attachments/assets/1616663a-534b-49bf-99f0-ba1d37716e1c" />
+### Login
+<img width="3072" height="1648" alt="Screenshot From 2025-12-14 22-02-28" src="https://github.com/user-attachments/assets/5e801982-3785-4664-85c3-b43a1a5a9c44" />
+### admin management
+<img width="3072" height="1648" alt="Screenshot From 2025-12-14 22-02-43" src="https://github.com/user-attachments/assets/7ff0ce2f-edd1-4ab6-acfa-827b829ae995" />
 
-### Landing Page
-![Landing Page](screenshots/landing-page.png)
-*Add screenshot: Login/Landing page*
 
-### User Dashboard
-![User Dashboard](screenshots/user-dashboard.png)
-*Add screenshot: Main dashboard with sweet cards and ₹ prices*
 
-### Admin Panel
-![Admin Panel](screenshots/admin-panel.png)
-*Add screenshot: Admin management interface*
 
-### Sweet Details
-![Sweet Details](screenshots/sweet-details.png)
-*Add screenshot: Individual sweet card/purchase flow*
+
+
+
 
 ---
 
