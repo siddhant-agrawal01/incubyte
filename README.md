@@ -1,4 +1,4 @@
-#  Sweet Shop Management System Built using MonoRepo
+#  Sweet Shop Management System Built using MonoRepo (TurboRepo)
 
 
 ## 🔗 Live Demo (https://incubyte-web.vercel.app/)
