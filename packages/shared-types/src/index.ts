@@ -16,10 +16,10 @@ export interface Sweet {
     id: string;
     name: string;
     category: string;
-    description: string;
+    description?: string;
     price: number;
     quantity: number;
-    imageUrl: string;
+    imageUrl?: string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -32,7 +32,6 @@ export interface Purchase {
     price: number;
     createdAt: Date;
 }
-
 
 export interface ApiResponse<T = any> {
     success: boolean;
@@ -53,11 +52,12 @@ export interface PaginationMeta {
     totalPages: number;
 }
 
-export interface PaginatedResponse<T> {
-    items: T[];
-    pagination: PaginationMeta;
-}
+// export interface PaginatedResponse<T> {
+//     items: T[];
+//     pagination: PaginationMeta;
+// }
 
+// Auth Types
 export interface AuthResponse {
     token: string;
     user: Omit<User, 'password'>;

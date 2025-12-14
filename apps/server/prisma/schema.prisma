@@ -40,10 +40,10 @@ model Sweet {
   id          String   @id @default(cuid())
   name        String
   category    String
-  description String
+  description String?
   price       Float
   quantity    Int      @default(0)
-  imageUrl    String
+  imageUrl    String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   

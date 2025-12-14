@@ -16,25 +16,7 @@ export const validateBody = (schema: ZodSchema) => {
 
 
 
-// This does two things at once:
 
-//  Validates
-
-// Ensures only correct data passes through
-
-//  Sanitizes & normalizes
-
-// Removes unexpected fields
-
-// Converts types
-
-// Enforces schema shape
-
-// So after this line:
-
-// req.query is trusted
-
-// Controllers can use it safely
 export const validateQuery = (schema: ZodSchema) => {
   return (req: Request, res: Response, next: NextFunction): void => {
     try {

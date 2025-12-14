@@ -16,10 +16,7 @@ const FRONTED_URL = process.env.FRONTED_URL;
 app.use(helmet());
 
 app.use(
-  cors({
-    origin: FRONTED_URL,
-    credentials: true,
-  })
+  cors()
 );
 
 app.use(morgan("dev"));
@@ -44,8 +41,8 @@ const apiLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-app.use("api/auth", authLimiter,authRoutes);
-app.use("api/sweets", apiLimiter,sweetRoutes);
+app.use("/api/auth", authLimiter,authRoutes);
+app.use("/api/sweets", apiLimiter,sweetRoutes);
 
 const startServer = async () => {
   try {
