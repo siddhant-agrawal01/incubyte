@@ -40,12 +40,7 @@
 
 Sweet Shop is a modern, full-stack e-commerce application designed for managing a sweet store. It features:
 
-- **🔐 User Authentication**: Secure registration and login with JWT tokens
-- **🛒 Product Catalog**: Browse sweets with search, filter by category, and pagination
-- **💳 Purchase System**: Buy sweets with real-time stock updates
-- **👨‍💼 Admin Dashboard**: Full CRUD operations for managing products
-- **💰 Indian Rupee (₹) Pricing**: All prices displayed in INR
-- **✨ Modern UI**: Glassmorphism design with smooth animations
+
 
 ### Key Features
 
@@ -75,7 +70,7 @@ Sweet Shop is a modern, full-stack e-commerce application designed for managing 
 - **Node.js + Express** - REST API server
 - **TypeScript** - Type-safe code
 - **Prisma ORM** - Database management
-- **PostgreSQL** - Relational database
+- **Neon DB PostgreSQL** - Relational database
 - **JWT** - Authentication tokens
 - **bcrypt** - Password hashing
 
@@ -292,32 +287,12 @@ Time:        0.98s
 
 ---
 
-## 🎨 UI Features
 
-- **Glassmorphism Navbar**: Floating frosted glass design
-- **Shimmer Buttons**: Animated admin button with shine effect
-- **Gradient Text**: Modern gradient typography
-- **Responsive Cards**: Beautiful sweet product cards
-- **Toast Notifications**: User feedback for actions
-- **Loading States**: Smooth loading indicators
 
----
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
----
 
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
 
 ## 👨‍💻 Author
 
@@ -327,13 +302,3 @@ This project is licensed under the MIT License.
 
 ---
 
-## 🙏 Acknowledgments
-
-- [Incubyte](https://incubyte.co/) - For the project challenge
-- [Next.js](https://nextjs.org/) - React framework
-- [Prisma](https://prisma.io/) - Database ORM
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-
----
-
-*Made with ❤️ using TypeScript, Next.js, and Express*
