@@ -1,7 +1,7 @@
 #  Sweet Shop Management System
 
 
-## 🔗 Live Demo
+## 🔗 Live Demo (https://incubyte-web.vercel.app/)
 
 **[🌐 Deployed Application](https://incubyte-web.vercel.app/  )** 
 
