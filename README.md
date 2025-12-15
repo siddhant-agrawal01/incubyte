@@ -7,6 +7,13 @@
 
 
 
+https://github.com/user-attachments/assets/1bb36c86-6e12-4795-a2db-b2e56ac45426
+
+
+
+
+
+
 ## 📸 Screenshots
 ### Landing page
 <img width="3072" height="1648" alt="Screenshot From 2025-12-15 00-00-33" src="https://github.com/user-attachments/assets/74e5ac9d-a06a-4ae6-aaaf-10e0d37ff9ad" />
